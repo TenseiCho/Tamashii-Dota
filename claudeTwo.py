@@ -46,7 +46,7 @@ def handle_error(err):
 
 # Log in to Steam
 try:
-    client.cli_login(username, password)
+    client.cli_login(USERNAME, PASSWORD)
     logger.info("Logged in to Steam.")
 except Exception as e:
     logger.error(f"Failed to log in to Steam: {repr(e)}")
