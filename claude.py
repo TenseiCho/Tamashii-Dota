@@ -36,10 +36,12 @@ def handle_logged_on():
             logger.error('Timed out waiting for Dota 2 game client to be ready')
             break
         logger.info('Waiting for Dota 2 game client to be ready...')
+        logger.info(f'dota.ready: {dota.ready}')  # Log the value of dota.ready
         time.sleep(5)  # Wait for 5 seconds before checking again
 
     if dota.ready:
         logger.info('Dota 2 game client is ready')
+        logger.info(f'dota.ready: {dota.ready}')  # Log the value of dota.ready when ready
 
         # Join the "tamashii" chat channel
         channel_name = "tamashii"
@@ -50,6 +52,7 @@ def handle_logged_on():
             logger.error(f'Failed to join the "{channel_name}" chat channel: {str(e)}')
     else:
         logger.error('Dota 2 game client is not ready')
+        logger.info(f'dota.ready: {dota.ready}')  # Log the value of dota.ready when not ready
 
 # Handle chat messages
 @dota.on('chat_message')

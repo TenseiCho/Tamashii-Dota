@@ -20,7 +20,7 @@ def handle_connected():
 def handle_logged_on():
     print('Logged in successfully!')
     client.games_played([570])  # 570 is the app ID for Dota 2
-    client.change_status(EPersonaState.Online)  # Set the bot's status to online
+    client.change_status(persona_state=EPersonaState.Online)  # Set the bot's status to online
 
 # Handle chat messages
 @dota.on('chat_message')
